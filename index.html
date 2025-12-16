@@ -1,190 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Menú Galaxy Night Club</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Menú Galaxy Night Club</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #3b1c6b, #0b0218);
-      color:#fff;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #3b1c6b, #0b0218);
+  color:#fff;
+}
 
-    .container{
-      max-width:900px;
-      margin:40px auto;
-      background:rgba(15,8,40,0.85);
-      border-radius:20px;
-      padding:30px;
-      box-shadow:0 0 40px #b14cff;
-    }
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:rgba(15,8,40,0.85);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 0 40px #b14cff;
+}
 
-    h1{
-      text-align:center;
-      font-size:42px;
-      margin-bottom:5px;
-      color:#ffb3ff;
-    }
+h1{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:10px;
+  color:#ffb3ff;
+}
 
-    h2{
-      margin-top:40px;
-      color:#a875ff;
-      border-bottom:2px solid #7c3aed;
-      padding-bottom:8px;
-    }
+h2{
+  margin-top:35px;
+  color:#a875ff;
+  border-bottom:2px solid #7c3aed;
+  padding-bottom:8px;
+}
 
-    .item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin:12px 0;
-    }
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:12px 0;
+}
 
-    .item span{
-      font-size:17px;
-    }
+.controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .controls{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+.controls button{
+  background:#7c3aed;
+  border:none;
+  color:white;
+  width:32px;
+  height:32px;
+  font-size:20px;
+  border-radius:8px;
+  cursor:pointer;
+}
 
-    .controls button{
-      background:#7c3aed;
-      border:none;
-      color:white;
-      width:32px;
-      height:32px;
-      font-size:20px;
-      border-radius:8px;
-      cursor:pointer;
-    }
+.controls button:hover{
+  background:#a875ff;
+}
 
-    .controls button:hover{
-      background:#a875ff;
-    }
+.price{
+  min-width:80px;
+  text-align:right;
+  color:#7cffea;
+}
 
-    .controls .price{
-      min-width:80px;
-      text-align:right;
-      color:#7cffea;
-    }
+.combo{
+  border:2px solid #b14cff;
+  border-radius:15px;
+  padding:15px;
+  margin:15px 0;
+  background:rgba(80,20,120,0.4);
+}
 
-    .total{
-      margin-top:40px;
-      font-size:28px;
-      text-align:right;
-      color:#7cffea;
-    }
+.combo small{
+  color:#ddd;
+}
 
-    .combo{
-      border:2px solid #b14cff;
-      border-radius:15px;
-      padding:15px;
-      margin:15px 0;
-      background:rgba(80,20,120,0.4);
-    }
+.discount-box{
+  margin:25px 0;
+  text-align:center;
+}
 
-    .combo small{
-      color:#ddd;
-    }
+select{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+}
 
-    .reset{
-      margin-top:20px;
-      width:100%;
-      padding:12px;
-      background:#ff4d6d;
-      border:none;
-      color:white;
-      font-size:18px;
-      border-radius:12px;
-      cursor:pointer;
-    }
+.total-box{
+  margin-top:30px;
+  text-align:right;
+}
 
-    .reset:hover{
-      background:#ff6f8f;
-    }
-  </style>
+.total-box p{
+  margin:5px 0;
+}
+
+.total-box h2{
+  color:#7cffea;
+}
+
+.reset{
+  margin-top:20px;
+  width:100%;
+  padding:12px;
+  background:#ff4d6d;
+  border:none;
+  color:white;
+  font-size:18px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.reset:hover{
+  background:#ff6f8f;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>MENÚ GALAXY<br>NIGHT CLUB</h1>
+<div class="container">
 
-    <!-- FASES LUNARES -->
-    <h2>🚀 Fases Lunares (Alcohol)</h2>
-    <div class="item"><span>Piscola</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
-    <div class="item"><span>Ruso Blanco</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
-    <div class="item"><span>Sexo en la Playa</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
-    <div class="item"><span>Agua Ardiente</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
-    <div class="item"><span>Blue Label</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
-    <div class="item"><span>Espumante</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<h1>MENÚ GALAXY<br>NIGHT CLUB</h1>
 
-    <!-- VIAJE NEBULAR -->
-    <h2>🛸 Viaje Nebular (Sin alcohol)</h2>
-    <div class="item"><span>Agua Mineral</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
-    <div class="item"><span>Energética</span><div class="controls"><button onclick="add(1000)">+</button><span class="price">$1.000</span></div></div>
-    <div class="item"><span>Mojito sin Alcohol</span><div class="controls"><button onclick="add(1000)">+</button><span class="price">$1.000</span></div></div>
+<div class="discount-box">
+  <label>Tipo de cliente:</label>
+  <select id="discountType" onchange="calcularTotal()">
+    <option value="0">Normal</option>
+    <option value="0.10">Oficial (10%)</option>
+    <option value="0.20">Samus (20%)</option>
+  </select>
+</div>
 
-    <!-- MAXIMO IMPULSO -->
-    <h2>🔥 Máximo Impulso</h2>
-    <div class="item"><span>Chorrillana</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
-    <div class="item"><span>Tabla de Queso</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
-    <div class="item"><span>Papas Cheese</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
+<h2>🚀 Fases Lunares (Alcohol)</h2>
+<div class="item"><span>Piscola</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Ruso Blanco</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Sexo en la Playa</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Agua Ardiente</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Blue Label</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Espumante</span><div class="controls"><button onclick="add(2000)">+</button><span class="price">$2.000</span></div></div>
 
-    <!-- POST VIAJE -->
-    <h2>☕ Post-Viaje Coffee Noir</h2>
-    <div class="item"><span>Sándwich Parisén</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
-    <div class="item"><span>Té Helado</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
+<h2>🛸 Viaje Nebular</h2>
+<div class="item"><span>Agua Mineral</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Energética</span><div class="controls"><button onclick="add(1000)">+</button><span class="price">$1.000</span></div></div>
+<div class="item"><span>Mojito sin Alcohol</span><div class="controls"><button onclick="add(1000)">+</button><span class="price">$1.000</span></div></div>
 
-    <!-- DULCE -->
-    <h2>🍬 Dulce Driveline</h2>
-    <div class="item"><span>Gansito</span><div class="controls"><button onclick="add(700)">+</button><span class="price">$700</span></div></div>
+<h2>🔥 Máximo Impulso</h2>
+<div class="item"><span>Chorrillana</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Tabla de Queso</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Papas Cheese</span><div class="controls"><button onclick="add(800)">+</button><span class="price">$800</span></div></div>
 
-    <!-- COMBOS -->
-    <h2>🌟 Zona de Ofertas: Combos</h2>
-
-    <div class="combo item">
-      <span>⭐ Oferta Estelar<br><small>5 bebidas alcohólicas + 5 comestibles</small></span>
-      <div class="controls"><button onclick="add(10900)">+</button><span class="price">$10.900</span></div>
-    </div>
-
-    <div class="combo item">
-      <span>🪐 Oferta El Planeta<br><small>5 bebidas sin alcohol + 5 comestibles</small></span>
-      <div class="controls"><button onclick="add(5500)">+</button><span class="price">$5.500</span></div>
-    </div>
-
-    <div class="combo item">
-      <span>🚀 Fuga Espacial<br><small>3 bebidas sin alcohol + 3 comestibles</small></span>
-      <div class="controls"><button onclick="add(3000)">+</button><span class="price">$3.000</span></div>
-    </div>
-
-    <div class="combo item">
-      <span>💥 Supernova<br><small>3 bebidas alcohólicas + 3 comestibles</small></span>
-      <div class="controls"><button onclick="add(5450)">+</button><span class="price">$5.450</span></div>
-    </div>
-
-    <div class="total" id="total">Total: $0</div>
-    <button class="reset" onclick="resetTotal()">Resetear venta</button>
-
-  </div>
-
-  <script>
-    let total = 0;
-
-    function add(valor){
-      total += valor;
-      document.getElementById('total').innerText = 'Total: $' + total.toLocaleString('es-CL');
-    }
-
-    function resetTotal(){
-      total = 0;
-      document.getElementById('total').innerText = 'Total: $0';
-    }
-  </script>
-</body>
-</html>
+<h2>☕ Post-Viaje Coffee Noir</h2>
+<div class="item"><span>Sándwich Parisén</span><div class="controls"><button onclick="add(800)">+</button><span class="price">
